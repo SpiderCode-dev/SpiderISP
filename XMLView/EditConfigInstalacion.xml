@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<view>
+    <columns>
+        <group name="Buscar cliente" numcolumns="12" icon="fas fa-user">
+            <column name="installation" display="none">
+                <widget type="text" fieldname="id_installation"/>
+            </column>
+            <column name="ip-address" numcolumns="5">
+                <widget type="text" fieldname="ip" icon="fas fa-laptop"/>
+            </column>
+            <column name="coords" numcolumns="5">
+                <widget type="text" fieldname="coords" icon="fas fa-map-marker-alt"/>
+            </column>
+        </group>
+    </columns>
+</view>
