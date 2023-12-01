@@ -9,7 +9,6 @@ class Init extends InitClass
 {
     public function init()
     {
-        $this->loadExtension(new Extension\Controller\EditClienteInstalacion());
     }
     public function update()
     {
