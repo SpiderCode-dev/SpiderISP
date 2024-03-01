@@ -7,7 +7,7 @@ use FacturaScripts\Plugins\SpiderFinance\Model\Zona;
 
 class MapsInstallations extends PanelController
 {
-    public function getPageData()
+    public function getPageData(): array
     {
         $data = parent::getPageData();
         $data['menu'] = 'customers';

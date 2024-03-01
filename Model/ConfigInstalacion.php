@@ -17,5 +17,6 @@ class ConfigInstalacion extends ModelClass
     public static function tableName(): string
     {
         return 'isp_config_instalacion';
+        
     }
 }
