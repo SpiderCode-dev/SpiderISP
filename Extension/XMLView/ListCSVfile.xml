@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<view>
+    <columns>
+        <column name="profile" order="120">
+            <widget type="select" fieldname="profile" translate="true">
+                <values fieldtitle="reminders">reminders</values>
+                <values fieldtitle="customers">customers</values>
+                <values fieldtitle="families">families</values>
+                <values fieldtitle="manufacturers">manufacturers</values>
+                <values fieldtitle="products">products</values>
+                <values fieldtitle="suppliers">suppliers</values>
+                <values fieldtitle="supplier-products">supplier-products</values>
+            </widget>
+        </column>
+    </columns>
+</view>

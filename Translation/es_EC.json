@@ -1,4 +1,10 @@
 {
   "ip-address": "Dirección IP",
-  "maps": "Mapas"
+  "maps": "Mapas",
+  "map": "Mapa",
+  "reminders": "Recordatorios",
+  "reminder": "Recordatorio",
+  "payment-reminders": "Recordatorios de pago",
+  "import-reminders": "Importar recordatorios",
+  "payment-reminder": "Recordatorio de pago"
 }
