@@ -4,7 +4,7 @@
     <columns>
         <column name="profile" order="120">
             <widget type="select" fieldname="profile" translate="true">
-                <values fieldtitle="reminders">reminders</values>
+                <values fieldtitle="payment-request">payment-request</values>
                 <values fieldtitle="customers">customers</values>
                 <values fieldtitle="families">families</values>
                 <values fieldtitle="manufacturers">manufacturers</values>

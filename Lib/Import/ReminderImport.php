@@ -21,7 +21,7 @@ class ReminderImport extends CsvImporClass
      */
     protected static function getProfile()
     {
-        return 'reminders';
+        return 'payment-request';
     }
 
     /**

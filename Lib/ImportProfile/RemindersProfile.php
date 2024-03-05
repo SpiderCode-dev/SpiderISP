@@ -7,7 +7,7 @@ use FacturaScripts\Dinamic\Model\Contacto;
 use FacturaScripts\Dinamic\Model\Plan;
 use FacturaScripts\Plugins\CSVimport\Lib\ImportProfile\ProfileClass;
 use FacturaScripts\Plugins\SpiderCompucima\Model\Almacen;
-use FacturaScripts\Plugins\SpiderISP\Model\PaymentReminder;
+use FacturaScripts\Plugins\SpiderISP\Model\PaymentRequest;
 
 /**
  * Description of Reminders
@@ -65,7 +65,7 @@ class RemindersProfile extends ProfileClass
             return false;
         }
 
-        $reminder = new PaymentReminder();
+        $reminder = new PaymentRequest();
         $where = [
             new DataBaseWhere('idcontacto', $contact->idcontacto),
             new DataBaseWhere('idplan', $plan->id),

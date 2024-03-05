@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<view>
+    <columns>
+        <column name="contact">
+            <widget type="autocomplete" fieldname="idcontacto" onclick="EditContacto">
+                <values source="contactos" fieldcode="idcontacto" fieldtitle="nombre"/>
+            </widget>
+        </column>
+        <column name="plan">
+            <widget type="autocomplete" fieldname="idplan" onclick="EditPlan">
+                <values source="sfi_planes" fieldcode="id" fieldtitle="name"/>
+            </widget>
+        </column>
+        <column name="total">
+            <widget type="money" fieldname="total"/>
+        </column>
+        <column name="date">
+            <widget type="date" fieldname="date"/>
+        </column>
+    </columns>
+</view>

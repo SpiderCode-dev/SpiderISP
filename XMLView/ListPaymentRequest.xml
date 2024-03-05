@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<view>
+    <columns>
+        <column name="contact">
+            <widget type="autocomplete" fieldname="idcontacto" onclick="EditContacto">
+                <values source="contactos" fieldcode="idcontacto" fieldtitle="nombre"/>
+            </widget>
+        </column>
+        <column name="phone">
+            <widget type="autocomplete" fieldname="idcontacto">
+                <values source="contactos" fieldcode="idcontacto" fieldtitle="telefono1"/>
+            </widget>
+        </column>
+        <column name="plan">
+            <widget type="autocomplete" fieldname="idplan" onclick="EditPlan">
+                <values source="sfi_planes" fieldcode="id" fieldtitle="name"/>
+            </widget>
+        </column>
+        <column name="total">
+            <widget type="money" fieldname="total"/>
+        </column>
+        <column name="date">
+            <widget type="date" fieldname="date"/>
+        </column>
+    </columns>
+    <modals>
+        <group name="import-reminders" title="import-reminders" icon="fas fa-clock">
+            <column name="file" numcolumns="12" order="100">
+                <widget type="file" fieldname="remindersfile" accept=".csv,.xls,.xlsx" required="true" />
+            </column>
+        </group>
+    </modals>
+</view>

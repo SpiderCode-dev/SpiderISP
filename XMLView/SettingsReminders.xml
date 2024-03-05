@@ -5,13 +5,8 @@
             <column name="name" display="none" order="0">
                 <widget type="text" fieldname="name" readonly="true" required="true"/>
             </column>
-            <column name="message" numcolumns="12" order="100">
-                <widget type="textarea" fieldname="message" rows="4"
-                    description="Variables: {NOMBRE}, {PRECIO}, {PLAN}"
-                />
-            </column>
-            <column name="hour" order="110" numcolumns="4">
-                <widget type="time" fieldname="hour"/>
+            <column name="message" numcolumns="12" order="100" description="Variables: {NOMBRE}, {PRECIO}, {PLAN}">
+                <widget type="textarea" fieldname="message" rows="4"/>
             </column>
         </group>
     </columns>
