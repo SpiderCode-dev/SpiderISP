@@ -6,6 +6,11 @@
                 <values source="contactos" fieldcode="idcontacto" fieldtitle="nombre"/>
             </widget>
         </column>
+        <column name="phone">
+            <widget type="autocomplete" fieldname="idcontacto">
+                <values source="contactos" fieldcode="idcontacto" fieldtitle="telefono1"/>
+            </widget>
+        </column>
         <column name="plan">
             <widget type="autocomplete" fieldname="idplan" onclick="EditPlan">
                 <values source="sfi_planes" fieldcode="id" fieldtitle="name"/>

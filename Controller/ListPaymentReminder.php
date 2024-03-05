@@ -5,6 +5,7 @@ namespace FacturaScripts\Plugins\SpiderISP\Controller;
 use FacturaScripts\Core\Lib\ExtendedController\ListController;
 use FacturaScripts\Core\Tools;
 use FacturaScripts\Plugins\SpiderISP\Lib\Import\ReminderImport;
+use FacturaScripts\Plugins\SpiderISP\Model\PaymentReminder;
 
 class ListPaymentReminder extends ListController
 {
@@ -29,13 +30,29 @@ class ListPaymentReminder extends ListController
         ];
         $this->addButton('ListPaymentReminder', $newButton);
 
-        $this->addEditView();
+        $newButton = [
+            'action' => 'send-messages',
+            'color' => 'success',
+            'icon' => 'fab fa-whatsapp',
+            'label' => 'send-messages',
+            'type' => 'confirm'
+        ];
+        $this->addButton('ListPaymentReminder', $newButton);
+
     }
 
     public function execPreviousAction($action)
     {
-        if ($action === 'import-reminders') {
-            return $this->importReminders();
+
+        switch ($action) {
+            case 'send-messages':
+                $reminders = (new PaymentReminder())->all();
+                foreach ($reminders as $reminder) {
+                    $reminder->sendMessage();
+                }
+                break;
+            case 'import-reminders':
+                return $this->importReminders();
         }
         parent::execPreviousAction($action);
     }
@@ -49,6 +66,10 @@ class ListPaymentReminder extends ListController
             return true;
         }
 
+        $reminders = (new PaymentReminder())->all();
+        foreach ($reminders as $reminder) {
+            $reminder->delete();
+        }
         $newCsvFile = ReminderImport::advancedImport($uploadFile);
         $this->redirect($newCsvFile->url());
         return true;

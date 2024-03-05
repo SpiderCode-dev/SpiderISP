@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <group name="reminders" numcolumns="12" valign="bottom">
+            <column name="name" display="none" order="0">
+                <widget type="text" fieldname="name" readonly="true" required="true"/>
+            </column>
+            <column name="message" numcolumns="12" order="100">
+                <widget type="textarea" fieldname="message" rows="4"
+                    description="Variables: {NOMBRE}, {PRECIO}, {PLAN}"
+                />
+            </column>
+            <column name="hour" order="110" numcolumns="4">
+                <widget type="time" fieldname="hour"/>
+            </column>
+        </group>
+    </columns>
+</view>
