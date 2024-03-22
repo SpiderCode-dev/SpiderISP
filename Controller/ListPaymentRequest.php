@@ -2,6 +2,7 @@
 
 namespace FacturaScripts\Plugins\SpiderISP\Controller;
 
+use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
 use FacturaScripts\Core\Lib\ExtendedController\ListController;
 use FacturaScripts\Core\Tools;
 use FacturaScripts\Plugins\SpiderISP\Lib\Import\ReminderImport;
@@ -69,9 +70,9 @@ class ListPaymentRequest extends ListController
     public function downloadTemplate()
     {
         $this->setTemplate(false);
-        $filePath = FS_FOLDER . '/Plugins/SpiderISP/Template/plantilla.csv';
+        $filePath = FS_FOLDER . '/Plugins/SpiderISP/Template/template_request.csv';
         $this->response->headers->set('Content-Type', 'text/csv');
-        $this->response->headers->set('Content-Disposition', 'attachment; filename="plantilla.csv"');
+        $this->response->headers->set('Content-Disposition', 'attachment; filename="template_request.csv"');
         $this->response->setContent(file_get_contents($filePath));
         return false;
     }
@@ -85,7 +86,11 @@ class ListPaymentRequest extends ListController
             return true;
         }
 
-        $requests = (new PaymentRequest())->all();
+        $where = [];
+        if (!$this->user->admin)
+            $where[] = [new DataBaseWhere('nick', $this->user->nick)];
+
+        $requests = (new PaymentRequest())->all($where, [], 0, 0);
         foreach ($requests as $request) {
             $request->delete();
         }

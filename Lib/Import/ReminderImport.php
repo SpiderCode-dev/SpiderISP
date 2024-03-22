@@ -4,8 +4,6 @@
  */
 namespace FacturaScripts\Plugins\SpiderISP\Lib\Import;
 
-use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
-use FacturaScripts\Dinamic\Model\Familia;
 use FacturaScripts\Plugins\CSVimport\Lib\Import\CsvImporClass;
 
 /**
