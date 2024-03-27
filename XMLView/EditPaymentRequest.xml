@@ -7,9 +7,7 @@
             </widget>
         </column>
         <column name="plan">
-            <widget type="autocomplete" fieldname="idplan" onclick="EditPlan">
-                <values source="sfi_planes" fieldcode="id" fieldtitle="name"/>
-            </widget>
+            <widget type="text" fieldname="plan"/>
         </column>
         <column name="total">
             <widget type="money" fieldname="total"/>

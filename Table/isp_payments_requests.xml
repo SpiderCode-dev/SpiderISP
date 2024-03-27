@@ -19,8 +19,8 @@
         <type>integer</type>
     </column>
     <column>
-        <name>idplan</name>
-        <type>integer</type>
+        <name>plan</name>
+        <type>varchar(50)</type>
     </column>
     <column>
         <name>total</name>
@@ -30,21 +30,8 @@
         <name>date</name>
         <type>datetime</type>
     </column>
-    <column>
-        <name>nick</name>
-        <type>varchar(50)</type>
-        <null>NO</null>
-    </column>
-    <constraint>
-        <name>ca_sfi_planes_idplan_requests</name>
-        <type>FOREIGN KEY (idplan) REFERENCES sfi_planes(id) ON DELETE CASCADE ON UPDATE CASCADE</type>
-    </constraint>
     <constraint>
         <name>ca_sfi_contactos_idcontacto_requests</name>
         <type>FOREIGN KEY (idcontacto) REFERENCES contactos(idcontacto) ON DELETE CASCADE ON UPDATE CASCADE</type>
-    </constraint>
-    <constraint>
-        <name>ca_sw_payments_request_users</name>
-        <type>FOREIGN KEY (nick) REFERENCES users (nick) ON DELETE SET CASCADE ON UPDATE CASCADE</type>
     </constraint>
 </table>

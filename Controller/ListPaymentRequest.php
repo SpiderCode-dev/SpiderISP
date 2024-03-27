@@ -71,6 +71,10 @@ class ListPaymentRequest extends ListController
     {
         $this->setTemplate(false);
         $filePath = FS_FOLDER . '/Plugins/SpiderISP/Template/template_request.csv';
+        if (!file_exists($filePath)) {
+            Tools::log()->error('file-not-found');
+            return true;
+        }
         $this->response->headers->set('Content-Type', 'text/csv');
         $this->response->headers->set('Content-Disposition', 'attachment; filename="template_request.csv"');
         $this->response->setContent(file_get_contents($filePath));
